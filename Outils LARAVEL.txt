@@ -1,0 +1,73 @@
+
+https://www.heroku.com/		hebergement
+https://www.db4free.net/        base de donnee
+
+***installation LARAVEL
+**installer wampserver avec php>=7.1
+***installer le logiciel Composer
+***Apres en cmd se mettre dans le dossier wamp/www et taper la commande
+-composer global require "laravel/installer"   
+
+***Apres taper la commande suivante pour creer un dossier laravel, toujours en etant dans le dossier wamp/www
+-laravel new dossiername 
+EX:laravel new dbsuivimedg2
+
+***Heroku marche avec git, donc on push le dossier-projet sur git et ca marche
+***Il faut créer un compte sur "herkou.com" , email + password
+
+***Installer le logiciel git sur son ordi et taper les commandes en se placant dans le dossier créer par laravel
+***wamp/www/dossiername
+-git init
+-git config user.email "votreemail"
+-git config user.name "votrenom"
+-git status
+
+***pour utiliser heroku avec git, il faut créer un fichier Procfile en tapant cette commande, ainsi heroku pourra se connecter a Git
+***Compte Heroku yeoyaya1@gmail.com/heroku123@
+-echo web: vendor/bin/heroku-php-apache2 public> Procfile
+***créer un repository dans son github, on obtient ce qui suit, à copier et a lancer dans son dossier /wamp/www/dossiername/
+-git add .
+-git commit -m "first commit"
+-git remote add origin https://github.com/yeodeb/groupe2.git
+-git push -u origin master
+
+***A faire dans "Heroku.com"
+-créer une nouvelle application "App name" Ex:suivi-dossier-medical
+-pipeline name = suivi-dossier-medical /stage
+-connect to github
+
+***Create online groupe prof
+-git remote add groupe https://github.com/2018MAGIR2A/groupe2.git
+-git push groupe master
+
+-git add .
+-git commit -m "test1"
+
+***
+-php artisan migrate:install
+-php artisan migrate
+
+***BD local - créer une bd avec les memes parametres que db4free
+-SET GLOBAL...commande a verifier
+***Créer un Compte utilisateur et cliquer sur donner tous les privilèges 'g2root'@'%'
+-php artisan make:auth
+-php artisan migrate
+
+***installation de voyager=interface graphique. Taper les commandes suivantes:
+-composer require tcg/voyager
+-php artisan voyager:install
+-php artisan voyager:admin admin@admin.com --create
+
+***Creer un user et password sur voyager //// Voyager(user:yeo/password:voyager)
+***email:admin@admin.com /password:voyager
+***Pour avoir acces à l'interface voyager apres installation, mettre l'url suivant
+-http://127.0.0.1:81/nomdevotredossier/public/admin
+
+***"Relancer "php artisan voyager:install" (pour mettre en ligne sur db4free;changer "DB_HOST=127.0.0.1" dans le dossier ".env")
+***Une seule personne afin que les autres puisse l'utiliser(interface voyager)
+***VOYAGER est une interface web / d'autres interfaces existent---à trouver et exploiter
+**Faire
+-git add .
+-git commit -m "voyager"
+
+
